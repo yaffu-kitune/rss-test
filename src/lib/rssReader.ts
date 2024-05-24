@@ -27,11 +27,15 @@ function displayItems(items: any[]) {
   });
 }
 
+function devdisplayItems(items: any[]) {
+  console.log(items[0])
+}
+
 // RSSリーダーの実行
 export function runRSSReader() {
   fetchRSS(rssUrl)
     .then(parseRSS)
-    .then(displayItems)
+    .then(devdisplayItems)
     .catch((err) => {
       console.error(`Error: ${err.message}`);
     });
